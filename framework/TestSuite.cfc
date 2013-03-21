@@ -1,6 +1,6 @@
 <cfcomponent displayname="TestSuite" extends="Test" hint="Responsible for creating and running groups of Tests.">
 	<cfset cu = createObject("component","ComponentUtils") />
-	
+
 
 	<cfparam name="this.testSuites" default="#getMap()#" />
 	<cfparam name="this.tests" default="#arrayNew(1)#" />
@@ -78,7 +78,7 @@
 			try{
 				//If the component already has methods, just update the method array
 				if ( this.testSuites.containsKey(arguments.componentName) ) {
-					tests = testSuites.get(arguments.componentName);
+					tests = this.testSuites.get(arguments.componentName);
 
 					for( i = 1; i lte listLen(arguments.methods); i = i + 1 ) {
 						arrayAppend(tests.methods, listGetAt(arguments.methods,i));
@@ -107,7 +107,7 @@
 		<cfif isSimpleValue(arguments.ComponentObject)>
 			<cfset ComponentObject = createObject("component",arguments.ComponentName).TestCase() />
 		</cfif>
- 	
+
 		<cfset a_methods = ComponentObject.getRunnableMethods() />
 
 		<cfset add(arguments.ComponentName,ArrayToList(a_methods),ComponentObject) />
@@ -177,7 +177,7 @@
 	</cffunction>
 
 	<cffunction name="suites" access="public" returntype="any">
-		
+
 		<cfreturn this.testSuites />
 	</cffunction>
 

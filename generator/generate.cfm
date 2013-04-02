@@ -19,7 +19,7 @@
 	testDir   = getProfileString( getProfilePath() , "blaster" , "testDirectory" );
 	testSig   = getProfileString( getProfilePath() , "blaster" , "testSignature" );
 	overwrite = getProfileString( getProfilePath() , "blaster" , "overwrite" );
- 	
+
 	componentArray = arraynew( 1 );
 </cfscript>
 
@@ -41,18 +41,18 @@
 								class = replaceNoCase( currentComponent , rootDir , rootSig );
 								class = removeChars( class , len(class) - 3 , 4 );
 								class = replaceNoCase( class , "/" , "." , "all" );
-								
+
 								// invoke it so we can read metadata
 								obj = createObject( "component" , class ); // note that we don't invoke any methods
 								md = getMetaData( obj );
-								md.path = replace(md.path,"\","/","All");								
-							</cfscript>					
+								md.path = replace(md.path,"\","/","All");
+							</cfscript>
 <cfxml variable="comp">
 <root>
 	<component path="#listDeleteAt(md.name,listLen(md.name,"."),".")#" name="#listLast(md.name,".")#" fullname="#md.name#">
 	<cfif IsDefined("md.functions")>
 	<cfloop index="method" from="1" to="#arrayLen(md.functions)#">
-		<method name="#md.functions[method].name#" 
+		<method name="#md.functions[method].name#"
 			<cfif structKeyExists(md.functions[method],"access")>
 				access="#md.functions[method].access#"
 			</cfif>
@@ -65,7 +65,7 @@
 		>
 			<name>#md.functions[method].name#</name>
 		<cfloop index="argument" from="1" to="#arrayLen(md.functions[method].parameters)#">
-			<parameter name="#md.functions[method].parameters[argument].name#" 
+			<parameter name="#md.functions[method].parameters[argument].name#"
 		 	<cfif structKeyExists(md.functions[method].parameters[argument],"required")>
 				required="#md.functions[method].parameters[argument].required#"
 			</cfif>
@@ -83,11 +83,11 @@
 </root>
 </cfxml>
 							<!--- store the xml for troubleshooting purposes --->
-							<cffile action="write" file="#getDirectoryFromPath(getCurrentTemplatePath())  & '/temp.xml'#" output="#comp#">	
+							<cffile action="write" file="#getDirectoryFromPath(getCurrentTemplatePath())  & '/temp.xml'#" output="#comp#">
 							<!--- read the template file --->
 							<cffile action="read" file="#getDirectoryFromPath(getCurrentTemplatePath()) & '/templates/' & template#" variable="xmlTransform">
 							<cfset newFile = xmlTransform(comp,xmlTransform) />
-				
+
 							<!--- Build test path --->
 							<cfset name = listLast(md.name,".") & "Test.cfc">
 							<cfif len(testDir)>
@@ -96,11 +96,11 @@
 								<!--- Create directory if needed --->
 								<cfif NOT directoryExists(testPath)>
 									<cfdirectory action="create" directory="#testPath#">
-								</cfif>			
-							<cfelse>					
+								</cfif>
+							<cfelse>
 								<cfset testPath = listDeleteAt(md.path,listLen(md.path,"/"),"/") & "/"/>
 							</cfif>
-							
+
 							<!--- Write the test file --->
 							<cfif overwrite OR NOT fileExists(testPath & name)>
 								<cffile action="write" file="#testPath & name#" output="#newFile#" >
@@ -120,7 +120,7 @@
 			</tbody>
 		</table>
 	</cfoutput>
-		
+
 		<!--- Create test suite --->
 <cfif len(testDir)>
 	<cfset testSuite = '<cfparam name="URL.output" default="html">
@@ -135,8 +135,8 @@
 				excludes      = "##excludes##"
 				);
 </cfscript>
- 
-<cfoutput>##results.getResultsOutput(URL.output)##</cfoutput>  			
+
+<cfoutput>##results.getResultsOutput(URL.output)##</cfoutput>
 	'>
 	<cfoutput>
 		<cffile action="write" file="#testDir#/myTestSuite.cfm" output="#testSuite#">

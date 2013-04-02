@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?><root>
+	<component fullname="lib.model.beans.user" name="user" path="lib.model.beans">
+	
+	
+		<method access="public" name="createOrRecreate" output="true" returntype="numeric">
+			<name>createOrRecreate</name>
+		
+			<parameter name="PARAMS" required="true" type="struct"/>
+		</method>
+	
+		<method access="public" name="createBasic" output="true" returntype="void">
+			<name>createBasic</name>
+		
+			<parameter name="PARAMS" required="true" type="struct"/>
+		</method>
+	
+		<method access="public" name="get" output="true" returntype="query">
+			<name>get</name>
+		
+			<parameter default="[runtime expression]" name="DSN" required="false" type="string"/>
+		</method>
+	
+		<method access="public" name="getByProperties" output="true" returntype="query">
+			<name>getByProperties</name>
+		
+			<parameter name="PROPERTIES" required="true" type="struct"/>
+			<parameter default="[runtime expression]" name="DSN" required="false" type="string"/>
+		</method>
+	
+		<method access="public" name="getExposedProperties" output="true" returntype="struct">
+			<name>getExposedProperties</name>
+		
+		</method>
+	
+		<method access="public" name="getYearRange" output="true" returntype="array">
+			<name>getYearRange</name>
+		
+		</method>
+	
+		<method access="public" name="save" output="true" returntype="any">
+			<name>save</name>
+		
+		</method>
+	
+		<method access="public" name="setDefaultTemplate" output="true" returntype="any">
+			<name>setDefaultTemplate</name>
+		
+			<parameter name="ID" required="true" type="numeric"/>
+		</method>
+	
+		<method access="public" name="validate" output="true" returntype="any">
+			<name>validate</name>
+		
+			<parameter default="[runtime expression]" name="PARAMS" required="false" type="struct"/>
+		</method>
+	
+		<method access="public" name="setDt_created" output="false" returntype="any">
+			<name>setDt_created</name>
+		
+			<parameter default="[runtime expression]" name="dt_created" required="true" type="string"/>
+		</method>
+	
+		<method access="public" name="getDt_tos_agreed" output="false" returntype="string">
+			<name>getDt_tos_agreed</name>
+		
+		</method>
+	
+		<method access="public" name="setDt_modified" output="false" returntype="any">
+			<name>setDt_modified</name>
+		
+			<parameter default="[runtime expression]" name="dt_modified" required="true" type="string"/>
+		</method>
+	
+		<method access="public" name="setDt_tos_agreed" output="false" returntype="any">
+			<name>setDt_tos_agreed</name>
+		
+			<parameter default="[runtime expression]" name="dt_tos_agreed" required="true" type="string"/>
+		</method>
+	
+		<method access="public" name="setToken" output="false" returntype="any">
+			<name>setToken</name>
+		
+			<parameter default="[runtime expression]" name="token" required="true" type="string"/>
+		</method>
+	
+		<method access="public" name="getDt_created" output="false" returntype="string">
+			<name>getDt_created</name>
+		
+		</method>
+	
+		<method access="public" name="getToken" output="false" returntype="string">
+			<name>getToken</name>
+		
+		</method>
+	
+		<method access="public" name="getSource" output="false" returntype="string">
+			<name>getSource</name>
+		
+		</method>
+	
+		<method access="public" name="getDt_modified" output="false" returntype="string">
+			<name>getDt_modified</name>
+		
+		</method>
+	
+		<method access="public" name="setStatus" output="false" returntype="any">
+			<name>setStatus</name>
+		
+			<parameter default="[runtime expression]" name="status" required="true" type="string"/>
+		</method>
+	
+		<method access="public" name="setSource" output="false" returntype="any">
+			<name>setSource</name>
+		
+			<parameter default="[runtime expression]" name="source" required="true" type="string"/>
+		</method>
+	
+		<method access="public" name="getUsername" output="false" returntype="string">
+			<name>getUsername</name>
+		
+		</method>
+	
+		<method access="public" name="getReceive_communications" output="false" returntype="string">
+			<name>getReceive_communications</name>
+		
+		</method>
+	
+		<method access="public" name="getFirst_name" output="false" returntype="string">
+			<name>getFirst_name</name>
+		
+		</method>
+	
+		<method access="public" name="getId" output="false" returntype="string">
+			<name>getId</name>
+		
+		</method>
+	
+		<method access="public" name="setSso_user_id" output="false" returntype="any">
+			<name>setSso_user_id</name>
+		
+			<parameter default="[runtime expression]" name="sso_user_id" required="true" type="string"/>
+		</method>
+	
+		<method access="public" name="setUsername" output="false" returntype="any">
+			<name>setUsername</name>
+		
+			<parameter default="[runtime expression]" name="username" required="true" type="string"/>
+		</method>
+	
+		<method access="public" name="setReceive_communications" output="false" returntype="any">
+			<name>setReceive_communications</name>
+		
+			<parameter default="[runtime expression]" name="receive_communications" required="true" type="numeric"/>
+		</method>
+	
+		<method access="public" name="setLast_name" output="false" returntype="any">
+			<name>setLast_name</name>
+		
+			<parameter default="[runtime expression]" name="last_name" required="true" type="string"/>
+		</method>
+	
+		<method access="public" name="getEmail" output="false" returntype="string">
+			<name>getEmail</name>
+		
+		</method>
+	
+		<method access="public" name="setPassword" output="false" returntype="any">
+			<name>setPassword</name>
+		
+			<parameter default="[runtime expression]" name="password" required="true" type="string"/>
+		</method>
+	
+		<method access="public" name="getLast_name" output="false" returntype="string">
+			<name>getLast_name</name>
+		
+		</method>
+	
+		<method access="public" name="getPassword" output="false" returntype="string">
+			<name>getPassword</name>
+		
+		</method>
+	
+		<method access="public" name="setEmail" output="false" returntype="any">
+			<name>setEmail</name>
+		
+			<parameter default="[runtime expression]" name="email" required="true" type="string"/>
+		</method>
+	
+		<method access="public" name="setId" output="false" returntype="any">
+			<name>setId</name>
+		
+			<parameter default="[runtime expression]" name="id" required="true" type="numeric"/>
+		</method>
+	
+		<method access="public" name="getStatus" output="false" returntype="string">
+			<name>getStatus</name>
+		
+		</method>
+	
+		<method access="public" name="setFirst_name" output="false" returntype="any">
+			<name>setFirst_name</name>
+		
+			<parameter default="[runtime expression]" name="first_name" required="true" type="string"/>
+		</method>
+	
+		<method access="public" name="getSso_user_id" output="false" returntype="string">
+			<name>getSso_user_id</name>
+		
+		</method>
+	
+	
+	</component>
+</root>
